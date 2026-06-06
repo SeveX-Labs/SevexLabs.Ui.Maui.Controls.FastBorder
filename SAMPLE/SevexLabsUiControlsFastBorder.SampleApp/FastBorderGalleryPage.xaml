@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SevexLabsUiControlsFastBorder.SampleApp.FastBorderGalleryPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SevexLabs.Ui.Maui.Controls.FastBorder;assembly=SevexLabs.Ui.Maui.Controls.FastBorder"
+    BackgroundColor="#FFFFFF"
+    Title="FastBorder Gallery">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="24">
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="28"
+                Text="FastBorder Gallery"
+                TextColor="#111827" />
+
+            <Label
+                FontSize="14"
+                Text="Screenshot-friendly examples for README documentation."
+                TextColor="#6B7280" />
+
+            <controls:FastBorder
+                BackgroundColor="#F8FAFC"
+                BorderColor="#D1D5DB"
+                BorderThickness="1"
+                CornerRadius="18"
+                Padding="18"
+                HorizontalOptions="Fill">
+                <VerticalStackLayout Spacing="14">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Basic"
+                        TextColor="#111827" />
+
+                    <controls:FastBorder
+                        BackgroundColor="#FFFFFF"
+                        BorderColor="#4F46E5"
+                        BorderThickness="3"
+                        Padding="18"
+                        HorizontalOptions="Fill">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Text="BorderColor, BorderThickness and Padding"
+                            TextColor="#111827" />
+                    </controls:FastBorder>
+                </VerticalStackLayout>
+            </controls:FastBorder>
+
+            <controls:FastBorder
+                BackgroundColor="#EEF2FF"
+                BorderColor="#C7D2FE"
+                BorderThickness="1"
+                CornerRadius="28"
+                Padding="18"
+                HorizontalOptions="Fill">
+                <VerticalStackLayout Spacing="14">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Rounded"
+                        TextColor="#111827" />
+
+                    <controls:FastBorder
+                        BackgroundColor="#4F46E5"
+                        BorderColor="#312E81"
+                        BorderThickness="2"
+                        CornerRadius="36"
+                        Padding="22"
+                        HorizontalOptions="Fill">
+                        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="14">
+                            <VerticalStackLayout Spacing="4">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    Text="Rounded card"
+                                    TextColor="#FFFFFF" />
+                                <Label
+                                    FontSize="14"
+                                    Text="Large CornerRadius with internal content."
+                                    TextColor="#E0E7FF" />
+                            </VerticalStackLayout>
+                            <controls:FastBorder
+                                Grid.Column="1"
+                                WidthRequest="52"
+                                HeightRequest="52"
+                                BackgroundColor="#A5B4FC"
+                                BorderThickness="0"
+                                CornerRadius="26"
+                                VerticalOptions="Center" />
+                        </Grid>
+                    </controls:FastBorder>
+                </VerticalStackLayout>
+            </controls:FastBorder>
+
+            <controls:FastBorder
+                BackgroundColor="#F9FAFB"
+                BorderColor="#E5E7EB"
+                BorderThickness="1"
+                CornerRadius="18"
+                Padding="18"
+                HorizontalOptions="Fill">
+                <VerticalStackLayout Spacing="18">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Shadow"
+                        TextColor="#111827" />
+
+                    <Grid Padding="12,8,24,24">
+                        <controls:FastBorder
+                            BackgroundColor="#FFFFFF"
+                            BorderColor="#E5E7EB"
+                            BorderThickness="1"
+                            CornerRadius="24"
+                            Padding="22"
+                            HorizontalOptions="Fill">
+                            <controls:FastBorder.Shadow>
+                                <Shadow
+                                    Brush="#111827"
+                                    Offset="10,12"
+                                    Opacity="0.32"
+                                    Radius="24" />
+                            </controls:FastBorder.Shadow>
+
+                            <VerticalStackLayout Spacing="6">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    Text="Visible shadow"
+                                    TextColor="#111827" />
+                                <Label
+                                    FontSize="14"
+                                    Text="Offset 10,12 - Radius 24 - Opacity 0.32"
+                                    TextColor="#4B5563" />
+                            </VerticalStackLayout>
+                        </controls:FastBorder>
+                    </Grid>
+                </VerticalStackLayout>
+            </controls:FastBorder>
+
+            <controls:FastBorder
+                BackgroundColor="#F8FAFC"
+                BorderColor="#E5E7EB"
+                BorderThickness="1"
+                CornerRadius="18"
+                Padding="18"
+                HorizontalOptions="Fill">
+                <VerticalStackLayout Spacing="14">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Clipping"
+                        TextColor="#111827" />
+
+                    <controls:FastBorder
+                        BackgroundColor="#111827"
+                        BorderColor="#111827"
+                        BorderThickness="4"
+                        CornerRadius="42"
+                        HeightRequest="210"
+                        HorizontalOptions="Fill">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <BoxView Grid.Row="0" Grid.Column="0" Color="#EF4444" />
+                            <BoxView Grid.Row="0" Grid.Column="1" Color="#FACC15" />
+                            <BoxView Grid.Row="1" Grid.Column="0" Color="#22C55E" />
+                            <BoxView Grid.Row="1" Grid.Column="1" Color="#3B82F6" />
+                        </Grid>
+                    </controls:FastBorder>
+                </VerticalStackLayout>
+            </controls:FastBorder>
+
+            <controls:FastBorder
+                BackgroundColor="#F8FAFC"
+                BorderColor="#E5E7EB"
+                BorderThickness="1"
+                CornerRadius="18"
+                Padding="18"
+                HorizontalOptions="Fill">
+                <VerticalStackLayout Spacing="12">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Profiling"
+                        TextColor="#111827" />
+
+                    <Label
+                        FontSize="14"
+                        Text="Use the Border vs FastBorder Profiling page for practical, scenario-dependent measurements."
+                        TextColor="#4B5563" />
+
+                    <Button
+                        Text="Open Border vs FastBorder Profiling"
+                        Clicked="OnOpenProfilingClicked" />
+                </VerticalStackLayout>
+            </controls:FastBorder>
+
+            <BoxView
+                HeightRequest="40"
+                Opacity="0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

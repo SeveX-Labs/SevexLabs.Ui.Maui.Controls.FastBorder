@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SevexLabsUiControlsFastBorder.SampleApp.TestPagesMenuPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SevexLabs.Ui.Maui.Controls.FastBorder;assembly=SevexLabs.Ui.Maui.Controls.FastBorder"
+    BackgroundColor="#FFFFFF"
+    Title="FastBorder Tests">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="16"
+            Spacing="18">
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="28"
+                Text="FastBorder Tests"
+                TextColor="Black" />
+
+            <Label
+                FontSize="14"
+                Text="Seleziona un test FastBorder da aprire."
+                TextColor="#707070" />
+
+            <controls:FastBorder
+                BackgroundColor="#F3F4F6"
+                BorderColor="#E5E7EB"
+                BorderThickness="1"
+                CornerRadius="28"
+                Padding="18"
+                HorizontalOptions="Fill">
+
+                <VerticalStackLayout Spacing="12">
+                    <Button
+                        Text="FastBorder Gallery"
+                        Clicked="OnFastBorderGalleryClicked" />
+
+                    <Button
+                        Text="FastBorder Tests"
+                        Clicked="OnFastBorderTestsClicked" />
+
+                    <Button
+                        Text="Border vs FastBorder Profiling"
+                        Clicked="OnBorderVsFastBorderProfilingTestsClicked" />
+                </VerticalStackLayout>
+            </controls:FastBorder>
+
+            <BoxView
+                HeightRequest="30"
+                Opacity="0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

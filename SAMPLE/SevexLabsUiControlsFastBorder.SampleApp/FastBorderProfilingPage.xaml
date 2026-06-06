@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SevexLabsUiControlsFastBorder.SampleApp.FastBorderProfilingPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SevexLabs.Ui.Maui.Controls.FastBorder;assembly=SevexLabs.Ui.Maui.Controls.FastBorder"
+    BackgroundColor="#FFFFFF"
+    Title="FastBorder Profiling">
+
+    <Grid RowDefinitions="Auto,*">
+        <VerticalStackLayout
+            Grid.Row="0"
+            Padding="16"
+            Spacing="18">
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="26"
+                Text="FastBorder Profiling Page"
+                TextColor="Black" />
+
+            <Label
+                FontSize="14"
+                Text="Pagina composta da FastBorder. Misure pratiche e indicative, non benchmark scientifici."
+                TextColor="#707070" />
+
+            <controls:FastBorder
+                BackgroundColor="#F8FAFC"
+                BorderColor="#E5E7EB"
+                BorderThickness="1"
+                CornerRadius="18"
+                Padding="16"
+                HorizontalOptions="Fill">
+
+                <VerticalStackLayout Spacing="8">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Metrics"
+                        TextColor="Black" />
+
+                    <Label
+                        x:Name="ConfigurationLabel"
+                        FontSize="13"
+                        TextColor="#374151" />
+
+                    <Label
+                        x:Name="BuildLabel"
+                        FontSize="13"
+                        TextColor="#374151" />
+
+                    <Label
+                        x:Name="BuildContainerLabel"
+                        FontSize="13"
+                        TextColor="#374151" />
+
+                    <Label
+                        x:Name="BuildItemsLabel"
+                        FontSize="13"
+                        TextColor="#374151" />
+
+                    <Label
+                        x:Name="AddToVisualTreeLabel"
+                        FontSize="13"
+                        TextColor="#374151" />
+
+                    <Label
+                        x:Name="MemoryLabel"
+                        FontSize="13"
+                        TextColor="#374151" />
+
+                    <Label
+                        x:Name="AppearingLabel"
+                        FontSize="13"
+                        TextColor="#374151" />
+
+                    <Label
+                        x:Name="LoadedLabel"
+                        FontSize="13"
+                        TextColor="#374151" />
+
+                    <Label
+                        x:Name="SizeChangedLabel"
+                        FontSize="13"
+                        TextColor="#374151" />
+
+                    <Label
+                        x:Name="AfterLayoutLabel"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        TextColor="#111827" />
+                </VerticalStackLayout>
+            </controls:FastBorder>
+        </VerticalStackLayout>
+
+        <ContentView
+            x:Name="ItemsHost"
+            Grid.Row="1"
+            Padding="16,0,16,16"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill" />
+    </Grid>
+</ContentPage>

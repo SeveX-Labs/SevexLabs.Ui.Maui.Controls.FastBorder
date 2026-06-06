@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SevexLabsUiControlsFastBorder.SampleApp.BorderVsFastBorderProfilingTests"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SevexLabs.Ui.Maui.Controls.FastBorder;assembly=SevexLabs.Ui.Maui.Controls.FastBorder"
+    BackgroundColor="#FFFFFF"
+    Title="Border vs FastBorder Profiling">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="16"
+            Spacing="18">
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="26"
+                Text="Border vs FastBorder Profiling"
+                TextColor="Black" />
+
+            <Label
+                FontSize="14"
+                Text="Benchmark pratici e indicativi: i numeri includono scheduling UI, layout e costi di runtime della SampleApp."
+                TextColor="#707070" />
+
+            <controls:FastBorder
+                BackgroundColor="#F8FAFC"
+                BorderColor="#E5E7EB"
+                BorderThickness="1"
+                CornerRadius="18"
+                Padding="16"
+                HorizontalOptions="Fill">
+
+                <VerticalStackLayout Spacing="14">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Configuration"
+                        TextColor="Black" />
+
+                    <Label
+                        FontSize="13"
+                        Text="Element count"
+                        TextColor="#374151" />
+
+                    <Picker
+                        x:Name="ElementCountPicker"
+                        SelectedIndexChanged="OnConfigurationChanged" />
+
+                    <Label
+                        FontSize="13"
+                        Text="Scenario"
+                        TextColor="#374151" />
+
+                    <Picker
+                        x:Name="ScenarioPicker"
+                        SelectedIndexChanged="OnConfigurationChanged" />
+
+                    <Label
+                        FontSize="13"
+                        Text="Layout"
+                        TextColor="#374151" />
+
+                    <Picker
+                        x:Name="LayoutModePicker"
+                        SelectedIndexChanged="OnConfigurationChanged" />
+
+                    <Label
+                        FontSize="13"
+                        Text="Test mode"
+                        TextColor="#374151" />
+
+                    <Picker
+                        x:Name="TestModePicker"
+                        SelectedIndexChanged="OnConfigurationChanged" />
+
+                    <HorizontalStackLayout Spacing="10">
+                        <CheckBox
+                            x:Name="ShadowCheckBox"
+                            CheckedChanged="OnConfigurationChanged" />
+                        <Label
+                            Text="Shadow"
+                            TextColor="#374151"
+                            VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+
+                    <Label
+                        x:Name="CornerRadiusValueLabel"
+                        FontSize="13"
+                        TextColor="#374151" />
+
+                    <Slider
+                        x:Name="CornerRadiusSlider"
+                        Minimum="0"
+                        Maximum="40"
+                        ValueChanged="OnConfigurationChanged" />
+
+                    <Label
+                        x:Name="BorderThicknessValueLabel"
+                        FontSize="13"
+                        TextColor="#374151" />
+
+                    <Slider
+                        x:Name="BorderThicknessSlider"
+                        Minimum="0"
+                        Maximum="6"
+                        ValueChanged="OnConfigurationChanged" />
+                </VerticalStackLayout>
+            </controls:FastBorder>
+
+            <controls:FastBorder
+                BackgroundColor="#F8FAFC"
+                BorderColor="#E5E7EB"
+                BorderThickness="1"
+                CornerRadius="18"
+                Padding="16"
+                HorizontalOptions="Fill">
+
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Actions"
+                        TextColor="Black" />
+
+                    <VerticalStackLayout Spacing="8">
+                        <Button
+                            x:Name="RunInlineButton"
+                            Text="Run inline comparison"
+                            Clicked="OnRunInlineComparisonClicked" />
+
+                        <Button
+                            Text="Open Border profiling page"
+                            Clicked="OnOpenBorderPageClicked" />
+
+                        <Button
+                            Text="Open FastBorder profiling page"
+                            Clicked="OnOpenFastBorderPageClicked" />
+
+                        <Button
+                            x:Name="RunNavigationButton"
+                            Text="Run navigation comparison"
+                            Clicked="OnRunNavigationComparisonClicked" />
+
+                        <Button
+                            Text="Clear log"
+                            Clicked="OnClearLogClicked" />
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </controls:FastBorder>
+
+            <controls:FastBorder
+                BackgroundColor="#F8FAFC"
+                BorderColor="#E5E7EB"
+                BorderThickness="1"
+                CornerRadius="18"
+                Padding="16"
+                HorizontalOptions="Fill">
+
+                <VerticalStackLayout Spacing="8">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Results"
+                        TextColor="Black" />
+
+                    <Label
+                        x:Name="ElementCountResultLabel"
+                        FontSize="13"
+                        TextColor="#374151" />
+
+                    <Label
+                        x:Name="BorderResultLabel"
+                        FontSize="14"
+                        TextColor="#111827" />
+
+                    <Label
+                        x:Name="FastBorderResultLabel"
+                        FontSize="14"
+                        TextColor="#111827" />
+
+                    <Label
+                        x:Name="DeltaResultLabel"
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        TextColor="#111827" />
+
+                    <Label
+                        x:Name="NavigationResultLabel"
+                        FontSize="13"
+                        TextColor="#374151" />
+                </VerticalStackLayout>
+            </controls:FastBorder>
+
+            <controls:FastBorder
+                BackgroundColor="#F8FAFC"
+                BorderColor="#E5E7EB"
+                BorderThickness="1"
+                CornerRadius="18"
+                Padding="16"
+                HorizontalOptions="Fill">
+
+                <VerticalStackLayout Spacing="10">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Inline host"
+                        TextColor="Black" />
+
+                    <Label
+                        FontSize="13"
+                        Text="The latest inline run is mounted below so layout cost is included in the practical measurement."
+                        TextColor="#6B7280" />
+
+                    <ContentView
+                        x:Name="InlineHost"
+                        HorizontalOptions="Fill" />
+                </VerticalStackLayout>
+            </controls:FastBorder>
+
+            <controls:FastBorder
+                BackgroundColor="#F8FAFC"
+                BorderColor="#E5E7EB"
+                BorderThickness="1"
+                CornerRadius="18"
+                Padding="16"
+                HorizontalOptions="Fill">
+
+                <VerticalStackLayout Spacing="8">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Log"
+                        TextColor="Black" />
+
+                    <Label
+                        x:Name="LogLabel"
+                        FontSize="12"
+                        LineBreakMode="WordWrap"
+                        TextColor="#374151" />
+                </VerticalStackLayout>
+            </controls:FastBorder>
+
+            <BoxView
+                HeightRequest="30"
+                Opacity="0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,1674 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+    x:Class="SevexLabsUiControlsFastBorder.SampleApp.FastBorderTests"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SevexLabs.Ui.Maui.Controls.FastBorder;assembly=SevexLabs.Ui.Maui.Controls.FastBorder"
+    BackgroundColor="#FFFFFF"
+    Title="FastBorder Tests">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="16"
+            Spacing="20">
+
+
+            <ContentView HorizontalOptions="Fill" VerticalOptions="Start">
+                <ContentView.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Default>40, 10, 40, 10</OnIdiom.Default>
+                        <OnIdiom.Phone>20, 10, 20, 10</OnIdiom.Phone>
+                        <OnIdiom.Tablet>40, 10, 40, 10</OnIdiom.Tablet>
+                    </OnIdiom>
+                </ContentView.Padding>
+
+                <controls:FastBorder HorizontalOptions="Fill" VerticalOptions="Start"
+                                     BackgroundColor="#F3F4F6"
+                                     CornerRadius="18"
+                                     BorderThickness="0">
+
+                    <controls:FastBorder.Shadow>
+                        <Shadow Offset="0, 2"
+                                Radius="8"
+                                Brush="{StaticResource Gray900Brush}" />
+                    </controls:FastBorder.Shadow>
+
+                    <Grid HorizontalOptions="Fill" ColumnSpacing="10" RowSpacing="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="10"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="8"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <BoxView Grid.Row="0" Grid.RowSpan="5" Grid.Column="0"
+                                 BackgroundColor="#CBD5E1"
+                                 WidthRequest="112"
+                                 HeightRequest="115" />
+
+                        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                               Text="Exercise title"
+                               VerticalOptions="Start" VerticalTextAlignment="Start"
+                               MaxLines="2" LineBreakMode="TailTruncation">
+                        </Label>
+
+
+                        <Label Grid.Row="3" Grid.Column="1" Text="05:00"
+                               VerticalOptions="Start">
+                        </Label>
+
+                    </Grid>
+
+                </controls:FastBorder>
+            </ContentView>
+
+
+            <controls:FastBorder BackgroundColor="LightBlue"
+                                 Margin="0"
+                                 BorderThickness="0" BorderColor="Transparent" Padding="20"
+                                 HorizontalOptions="Start" VerticalOptions="Start">
+                <BoxView
+                    WidthRequest="24"
+                    HeightRequest="24"
+                    BackgroundColor="LightGreen"
+                    HorizontalOptions="End"
+                    VerticalOptions="End" />
+
+            </controls:FastBorder>
+
+            <!--
+            <Border
+                HeightRequest="120"
+                BackgroundColor="#2D5AFF"
+                BorderColor="Red"
+                BorderThickness="2"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start">
+                <Label
+                    HorizontalOptions="End"
+                    BackgroundColor="Yellow"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="HERE"
+                    TextColor="Black" />
+            </Border>
+            -->
+
+            <Border
+                x:Name="MauiBorderReference"
+                HeightRequest="120"
+                BackgroundColor="LightGray"
+                Stroke="Red"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 50"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start"
+                Margin="0">
+                <Border.Shadow>
+                    <Shadow
+                        Brush="Blue"
+                        Offset="2,2"
+                        Opacity="0.70"
+                        Radius="20" />
+                </Border.Shadow>
+
+                <Label
+                    HorizontalOptions="End"
+                    BackgroundColor="Yellow"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="BORDER"
+                    TextColor="Black" />
+            </Border>
+
+            <controls:FastBorder
+                HeightRequest="120"
+                BackgroundColor="Transparent"
+                BorderColor="Red"
+                BorderThickness="2"
+                CornerRadius="50"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start"
+                Margin="0">
+                <controls:FastBorder.Shadow>
+                    <Shadow
+                        Brush="Blue"
+                        Offset="2,2"
+                        Opacity="0.70"
+                        Radius="20" />
+                </controls:FastBorder.Shadow>
+
+                <Label
+                    HorizontalOptions="End"
+                    BackgroundColor="Yellow"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="FAST BORDER"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <controls:FastBorder
+                HeightRequest="120"
+                BackgroundColor="Transparent"
+                BorderColor="Red"
+                BorderThickness="2"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start">
+                <controls:FastBorder.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Offset="8,8"
+                        Opacity="0.70"
+                        Radius="18" />
+                </controls:FastBorder.Shadow>
+
+                <Label
+                    HorizontalOptions="End"
+                    BackgroundColor="Yellow"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="HERE"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <Border
+                HeightRequest="120"
+                BackgroundColor="Transparent"
+                Stroke="Red"
+                StrokeThickness="2"
+                Background="White"
+                HorizontalOptions="Start"
+                VerticalOptions="Start">
+                <controls:FastBorder.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Offset="8,8"
+                        Opacity="0.70"
+                        Radius="18" />
+                </controls:FastBorder.Shadow>
+
+                <Label
+                    HorizontalOptions="End"
+                    BackgroundColor="Yellow"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="BORDER_MAUI"
+                    TextColor="Black" />
+            </Border>
+
+            <controls:FastBorder
+                HeightRequest="120"
+                BackgroundColor="Transparent"
+                BorderColor="Red"
+                BorderThickness="2"
+                HorizontalOptions="Start"
+                VerticalOptions="Start">
+                <controls:FastBorder.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Offset="8,8"
+                        Opacity="0.70"
+                        Radius="18" />
+                </controls:FastBorder.Shadow>
+
+                <Label
+                    HorizontalOptions="End"
+                    BackgroundColor="Yellow"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="FAST_BORDER"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <controls:FastBorder
+                HeightRequest="120"
+                BackgroundColor="Transparent"
+                BorderColor="Red"
+                BorderThickness="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Start">
+                <controls:FastBorder.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Offset="8,8"
+                        Opacity="0.70"
+                        Radius="18" />
+                </controls:FastBorder.Shadow>
+
+                <Label
+                    HorizontalOptions="End"
+                    BackgroundColor="Yellow"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="HERE"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <controls:FastBorder
+                HeightRequest="120"
+                BackgroundColor="Transparent"
+                BorderColor="Red"
+                BorderThickness="2"
+                HorizontalOptions="End"
+                VerticalOptions="Start">
+                <controls:FastBorder.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Offset="8,8"
+                        Opacity="0.70"
+                        Radius="18" />
+                </controls:FastBorder.Shadow>
+
+                <Label
+                    HorizontalOptions="End"
+                    BackgroundColor="Yellow"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="HERE"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <HorizontalStackLayout HorizontalOptions="Fill" HeightRequest="300" BackgroundColor="LightCoral">
+                <controls:FastBorder
+                    HeightRequest="70"
+                    BackgroundColor="#2D5AFF"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="16"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+                </controls:FastBorder>
+                <controls:FastBorder
+                    HeightRequest="70"
+                    BackgroundColor="#2D5AFF"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="16"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                </controls:FastBorder>
+                <controls:FastBorder
+                    HeightRequest="70"
+                    BackgroundColor="#2D5AFF"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="16"
+                    HorizontalOptions="End"
+                    VerticalOptions="End">
+                </controls:FastBorder>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Fill" HeightRequest="300" BackgroundColor="LightGray">
+                <Border
+                    HeightRequest="70"
+                    BackgroundColor="#2D5AFF"
+                    Stroke="Red"
+                    StrokeThickness="2"
+                    Padding="16"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+                </Border>
+                <Border
+                    HeightRequest="70"
+                    BackgroundColor="#2D5AFF"
+                    Stroke="Red"
+                    StrokeThickness="2"
+                    Padding="16"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                </Border>
+                <Border
+                    HeightRequest="70"
+                    BackgroundColor="#2D5AFF"
+                    Stroke="Red"
+                    StrokeThickness="2"
+                    Padding="16"
+                    HorizontalOptions="End"
+                    VerticalOptions="End">
+                </Border>
+            </HorizontalStackLayout>
+
+            <!-- Header -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="26"
+                Text="FastBorder Tests"
+                TextColor="Black" />
+
+            <Label
+                FontSize="14"
+                Text="Pagina di test per verificare layout, stroke, corner radius, background, shadow, padding, alignment e contenuto."
+                TextColor="#D0D0D0" />
+
+            <!-- ===================================================== -->
+            <!-- FULL WIDTH / HEIGHT-LIKE -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="A tutto schermo / full width"
+                TextColor="Black" />
+
+            <!-- Full width - content left -->
+            <controls:FastBorder
+                HeightRequest="120"
+                BackgroundColor="#2D5AFF"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start">
+                <Label
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Full width - content left"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Full width - content center -->
+            <controls:FastBorder
+                HeightRequest="120"
+                BackgroundColor="#00A86B"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Full width - content center"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Full width - content right -->
+            <controls:FastBorder
+                HeightRequest="120"
+                BackgroundColor="#C75C00"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start">
+                <Label
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Full width - content right"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- ===================================================== -->
+            <!-- WIDTH CONTENT-BASED -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Shrink / content-based width"
+                TextColor="Black" />
+
+            <HorizontalStackLayout Spacing="12">
+                <controls:FastBorder
+                    BackgroundColor="#444444"
+                    BorderColor="Lime"
+                    BorderThickness="2"
+                    Padding="16,10"
+                    HorizontalOptions="Start">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="Sinistra"
+                        TextColor="Black" />
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    BackgroundColor="#444444"
+                    BorderColor="Yellow"
+                    BorderThickness="2"
+                    Padding="16,10"
+                    HorizontalOptions="CenterAndExpand">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="Centro"
+                        TextColor="Black" />
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    BackgroundColor="#444444"
+                    BorderColor="Orange"
+                    BorderThickness="2"
+                    Padding="16,10"
+                    HorizontalOptions="End">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="Destra"
+                        TextColor="Black" />
+                </controls:FastBorder>
+            </HorizontalStackLayout>
+
+            <!-- ===================================================== -->
+            <!-- SHADOW ON / OFF -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Con e senza shadow"
+                TextColor="Black" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="16">
+
+                <controls:FastBorder
+                    Grid.Column="0"
+                    BackgroundColor="#303030"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="16"
+                    CornerRadius="16">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="No Shadow"
+                        TextColor="Black" />
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Column="1"
+                    BackgroundColor="#303030"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="16"
+                    CornerRadius="16">
+                    <controls:FastBorder.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Offset="8,8"
+                            Opacity="0.70"
+                            Radius="18" />
+                    </controls:FastBorder.Shadow>
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="With Shadow"
+                        TextColor="Black" />
+                </controls:FastBorder>
+            </Grid>
+
+            <!-- ===================================================== -->
+            <!-- BORDER ON / OFF -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Con e senza border"
+                TextColor="Black" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="16">
+
+                <controls:FastBorder
+                    Grid.Column="0"
+                    BackgroundColor="#5A2D82"
+                    BorderThickness="0"
+                    Padding="16"
+                    CornerRadius="14">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="No Border"
+                        TextColor="Black" />
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Column="1"
+                    BackgroundColor="#5A2D82"
+                    BorderColor="Red"
+                    BorderThickness="3"
+                    Padding="16"
+                    CornerRadius="14">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="With Border"
+                        TextColor="Black" />
+                </controls:FastBorder>
+            </Grid>
+
+            <!-- ===================================================== -->
+            <!-- CORNER RADIUS ON / OFF -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Con e senza corner radius"
+                TextColor="Black" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="16">
+
+                <controls:FastBorder
+                    Grid.Column="0"
+                    BackgroundColor="#0E7490"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="16">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="CornerRadius 0"
+                        TextColor="Black" />
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Column="1"
+                    BackgroundColor="#0E7490"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="16"
+                    CornerRadius="22">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="CornerRadius 22"
+                        TextColor="Black" />
+                </controls:FastBorder>
+            </Grid>
+
+            <!-- ===================================================== -->
+            <!-- BACKGROUND ON / OFF -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Con e senza background color"
+                TextColor="Black" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="16">
+
+                <controls:FastBorder
+                    Grid.Column="0"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="16"
+                    CornerRadius="18">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="No Background"
+                        TextColor="Black" />
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Column="1"
+                    BackgroundColor="#AA1D5D"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="16"
+                    CornerRadius="18">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="With Background"
+                        TextColor="Black" />
+                </controls:FastBorder>
+            </Grid>
+
+            <!-- ===================================================== -->
+            <!-- PER-CORNER RADIUS -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="CornerRadius per angolo"
+                TextColor="Black" />
+
+            <Label
+                FontSize="13"
+                Text="Test per verificare CornerRadius uniforme e differenziato per TopLeft, TopRight, BottomLeft, BottomRight."
+                TextColor="#707070" />
+
+            <!-- Uniforme: deve comportarsi come prima -->
+            <controls:FastBorder
+                HeightRequest="110"
+                BackgroundColor="#1F6F78"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                CornerRadius="30"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Uniforme: 30"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Solo TopLeft -->
+            <controls:FastBorder
+                HeightRequest="110"
+                BackgroundColor="#2D5AFF"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                CornerRadius="40,0,0,0"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Solo TopLeft: 40,0,0,0"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Solo TopRight -->
+            <controls:FastBorder
+                HeightRequest="110"
+                BackgroundColor="#00A86B"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                CornerRadius="0,40,0,0"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Solo TopRight: 0,40,0,0"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Solo BottomLeft -->
+            <controls:FastBorder
+                HeightRequest="110"
+                BackgroundColor="#C75C00"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                CornerRadius="0,0,40,0"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Solo BottomLeft: 0,0,40,0"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Solo BottomRight -->
+            <controls:FastBorder
+                HeightRequest="110"
+                BackgroundColor="#AA1D5D"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                CornerRadius="0,0,0,40"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Solo BottomRight: 0,0,0,40"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Diagonale TopLeft + BottomRight -->
+            <controls:FastBorder
+                HeightRequest="110"
+                BackgroundColor="#5A2D82"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                CornerRadius="40,0,0,40"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Diagonale: 40,0,0,40"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Diagonale TopRight + BottomLeft -->
+            <controls:FastBorder
+                HeightRequest="110"
+                BackgroundColor="#0E7490"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                CornerRadius="0,40,40,0"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Diagonale: 0,40,40,0"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Angoli superiori arrotondati -->
+            <controls:FastBorder
+                HeightRequest="110"
+                BackgroundColor="#374151"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                CornerRadius="40,40,0,0"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Solo top: 40,40,0,0"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Angoli inferiori arrotondati -->
+            <controls:FastBorder
+                HeightRequest="110"
+                BackgroundColor="#065F46"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                CornerRadius="0,0,40,40"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Solo bottom: 0,0,40,40"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Valori tutti diversi -->
+            <controls:FastBorder
+                HeightRequest="110"
+                BackgroundColor="#7C2D12"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                CornerRadius="8,24,40,56"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Diversi: 8,24,40,56"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Raggio molto grande, utile per verificare clamp/normalizzazione -->
+            <controls:FastBorder
+                HeightRequest="90"
+                BackgroundColor="#1F2937"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                CornerRadius="80,80,80,80"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Grande: 80,80,80,80"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Background trasparente + corner radius differenziato -->
+            <controls:FastBorder
+                HeightRequest="110"
+                BackgroundColor="Transparent"
+                BorderColor="#22D3EE"
+                BorderThickness="3"
+                Padding="16"
+                CornerRadius="40,8,40,8"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Transparent: 40,8,40,8"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Shadow + corner radius differenziato -->
+            <controls:FastBorder
+                HeightRequest="110"
+                BackgroundColor="#303030"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="16"
+                CornerRadius="40,0,40,0"
+                HorizontalOptions="Fill">
+                <controls:FastBorder.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Offset="8,8"
+                        Opacity="0.70"
+                        Radius="18" />
+                </controls:FastBorder.Shadow>
+
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Shadow: 40,0,40,0"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Border spesso + corner radius differenziato -->
+            <controls:FastBorder
+                HeightRequest="110"
+                BackgroundColor="#2B2B2B"
+                BorderColor="#8B5CF6"
+                BorderThickness="8"
+                Padding="16"
+                CornerRadius="48,12,48,12"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Border 8: 48,12,48,12"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- Contenuto colorato per verificare eventuale clipping -->
+            <controls:FastBorder
+                HeightRequest="130"
+                BackgroundColor="#F3F4F6"
+                BorderColor="Red"
+                BorderThickness="2"
+                Padding="0"
+                CornerRadius="40,0,40,0"
+                HorizontalOptions="Fill">
+                <Grid BackgroundColor="LightGreen">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Content clipping test"
+                        TextColor="Black" />
+                </Grid>
+            </controls:FastBorder>
+
+            <!-- ===================================================== -->
+            <!-- PADDING TEST -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Padding test"
+                TextColor="Black" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="16">
+
+                <controls:FastBorder
+                    Grid.Column="0"
+                    BackgroundColor="#374151"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="4"
+                    CornerRadius="14">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="Padding 4"
+                        TextColor="Black" />
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Column="1"
+                    BackgroundColor="#374151"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="24"
+                    CornerRadius="14">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="Padding 24"
+                        TextColor="Black" />
+                </controls:FastBorder>
+            </Grid>
+
+            <!-- ===================================================== -->
+            <!-- THICK BORDER -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Stroke thickness estremi"
+                TextColor="Black" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="16">
+
+                <controls:FastBorder
+                    Grid.Column="0"
+                    BackgroundColor="#1F2937"
+                    BorderColor="Red"
+                    BorderThickness="1"
+                    Padding="16"
+                    CornerRadius="16">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="Stroke 1"
+                        TextColor="Black" />
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Column="1"
+                    BackgroundColor="#1F2937"
+                    BorderColor="Red"
+                    BorderThickness="8"
+                    Padding="16"
+                    CornerRadius="16">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="Stroke 8"
+                        TextColor="Black" />
+                </controls:FastBorder>
+            </Grid>
+
+            <!-- ===================================================== -->
+            <!-- CONTENT: COMPLEX -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Contenuto complesso"
+                TextColor="Black" />
+
+            <controls:FastBorder
+                BackgroundColor="#2B2B2B"
+                BorderColor="#8B5CF6"
+                BorderThickness="2"
+                Padding="14"
+                CornerRadius="18"
+                HorizontalOptions="Fill">
+                <controls:FastBorder.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Offset="4,4"
+                        Opacity="0.55"
+                        Radius="12" />
+                </controls:FastBorder.Shadow>
+
+                <Grid
+                    ColumnDefinitions="Auto,*"
+                    ColumnSpacing="12"
+                    RowDefinitions="Auto,Auto">
+
+                    <BoxView
+                        Grid.RowSpan="2"
+                        WidthRequest="24"
+                        HeightRequest="24"
+                        Color="#8B5CF6"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        Text="Card complessa"
+                        TextColor="Black" />
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        FontSize="13"
+                        Text="Test con contenuto interno composto da più elementi e layout annidato."
+                        TextColor="#D1D5DB" />
+                </Grid>
+            </controls:FastBorder>
+
+            <!-- ===================================================== -->
+            <!-- TRANSPARENT BACKGROUND + ONLY STROKE -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Solo stroke"
+                TextColor="Black" />
+
+            <controls:FastBorder
+                HeightRequest="100"
+                BorderColor="#22D3EE"
+                BorderThickness="3"
+                Padding="12"
+                CornerRadius="20"
+                HorizontalOptions="Fill">
+                <Label
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Text="Transparent background + stroke"
+                    TextColor="Black" />
+            </controls:FastBorder>
+
+            <!-- ===================================================== -->
+            <!-- NO CONTENT -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Senza contenuto"
+                TextColor="Black" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="16">
+
+                <controls:FastBorder
+                    Grid.Column="0"
+                    HeightRequest="80"
+                    BackgroundColor="#065F46"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    CornerRadius="14" />
+
+                <controls:FastBorder
+                    Grid.Column="1"
+                    HeightRequest="80"
+                    BackgroundColor="#7C2D12"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    CornerRadius="14">
+                    <controls:FastBorder.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Offset="6,6"
+                            Opacity="0.6"
+                            Radius="14" />
+                    </controls:FastBorder.Shadow>
+                </controls:FastBorder>
+            </Grid>
+
+            <!-- ===================================================== -->
+            <!-- VERTICAL ALIGNMENT -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Vertical alignment del contenuto"
+                TextColor="Black" />
+
+            <Grid
+                ColumnDefinitions="*,*,*"
+                ColumnSpacing="12">
+
+                <controls:FastBorder
+                    Grid.Column="0"
+                    HeightRequest="140"
+                    BackgroundColor="#334155"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="12"
+                    CornerRadius="16">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        FontAttributes="Bold"
+                        Text="Top"
+                        TextColor="Black" />
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Column="1"
+                    HeightRequest="140"
+                    BackgroundColor="#334155"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="12"
+                    CornerRadius="16">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="Center"
+                        TextColor="Black" />
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Column="2"
+                    HeightRequest="140"
+                    BackgroundColor="#334155"
+                    BorderColor="Red"
+                    BorderThickness="2"
+                    Padding="12"
+                    CornerRadius="16">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="End"
+                        FontAttributes="Bold"
+                        Text="Bottom"
+                        TextColor="Black" />
+                </controls:FastBorder>
+            </Grid>
+
+            <!-- ===================================================== -->
+            <!-- PARITY / STRESS MATRIX -->
+            <!-- ===================================================== -->
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="22"
+                Text="Parity / stress matrix"
+                TextColor="Black" />
+
+            <Label
+                FontSize="13"
+                Text="Casi mirati per confrontare Android e iOS su misura, padding, stroke, radius, clipping e shadow."
+                TextColor="#707070" />
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Child Fill vs content-sized"
+                TextColor="Black" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="12">
+
+                <controls:FastBorder
+                    Grid.Column="0"
+                    HeightRequest="96"
+                    BackgroundColor="#EEF2FF"
+                    BorderColor="#4F46E5"
+                    BorderThickness="2"
+                    Padding="8"
+                    CornerRadius="16">
+                    <Grid
+                        BackgroundColor="#FDBA74"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill">
+                        <Label
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            FontAttributes="Bold"
+                            Text="Fill child"
+                            TextColor="Black" />
+                    </Grid>
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Column="1"
+                    HeightRequest="96"
+                    BackgroundColor="#EEF2FF"
+                    BorderColor="#4F46E5"
+                    BorderThickness="2"
+                    Padding="8"
+                    CornerRadius="16">
+                    <HorizontalStackLayout
+                        BackgroundColor="#FDBA74"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        Padding="8,4">
+                        <Label
+                            FontAttributes="Bold"
+                            Text="Small child"
+                            TextColor="Black" />
+                    </HorizontalStackLayout>
+                </controls:FastBorder>
+            </Grid>
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Content HorizontalOptions"
+                TextColor="Black" />
+
+            <VerticalStackLayout Spacing="8">
+                <controls:FastBorder
+                    HeightRequest="64"
+                    BackgroundColor="#F8FAFC"
+                    BorderColor="#0F766E"
+                    BorderThickness="2"
+                    Padding="8"
+                    CornerRadius="12"
+                    HorizontalOptions="Fill">
+                    <HorizontalStackLayout
+                        BackgroundColor="#99F6E4"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        Padding="8,2">
+                        <Label Text="Start" TextColor="Black" />
+                    </HorizontalStackLayout>
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    HeightRequest="64"
+                    BackgroundColor="#F8FAFC"
+                    BorderColor="#0F766E"
+                    BorderThickness="2"
+                    Padding="8"
+                    CornerRadius="12"
+                    HorizontalOptions="Fill">
+                    <HorizontalStackLayout
+                        BackgroundColor="#99F6E4"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Padding="8,2">
+                        <Label Text="Center" TextColor="Black" />
+                    </HorizontalStackLayout>
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    HeightRequest="64"
+                    BackgroundColor="#F8FAFC"
+                    BorderColor="#0F766E"
+                    BorderThickness="2"
+                    Padding="8"
+                    CornerRadius="12"
+                    HorizontalOptions="Fill">
+                    <HorizontalStackLayout
+                        BackgroundColor="#99F6E4"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Padding="8,2">
+                        <Label Text="End" TextColor="Black" />
+                    </HorizontalStackLayout>
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    HeightRequest="64"
+                    BackgroundColor="#F8FAFC"
+                    BorderColor="#0F766E"
+                    BorderThickness="2"
+                    Padding="8"
+                    CornerRadius="12"
+                    HorizontalOptions="Fill">
+                    <Grid
+                        BackgroundColor="#99F6E4"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center">
+                        <Label
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Text="Fill"
+                            TextColor="Black" />
+                    </Grid>
+                </controls:FastBorder>
+            </VerticalStackLayout>
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Padding"
+                TextColor="Black" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="12"
+                RowDefinitions="Auto,Auto"
+                RowSpacing="12">
+
+                <controls:FastBorder
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HeightRequest="76"
+                    BackgroundColor="#F0FDF4"
+                    BorderColor="#16A34A"
+                    BorderThickness="2"
+                    Padding="0"
+                    CornerRadius="14">
+                    <Grid BackgroundColor="#BBF7D0">
+                        <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Padding 0" TextColor="Black" />
+                    </Grid>
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HeightRequest="76"
+                    BackgroundColor="#F0FDF4"
+                    BorderColor="#16A34A"
+                    BorderThickness="2"
+                    Padding="16"
+                    CornerRadius="14">
+                    <Grid BackgroundColor="#BBF7D0">
+                        <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Padding 16" TextColor="Black" />
+                    </Grid>
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HeightRequest="76"
+                    BackgroundColor="#F0FDF4"
+                    BorderColor="#16A34A"
+                    BorderThickness="2"
+                    Padding="24"
+                    CornerRadius="14">
+                    <Grid BackgroundColor="#BBF7D0">
+                        <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Padding 24" TextColor="Black" />
+                    </Grid>
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HeightRequest="76"
+                    BackgroundColor="#F0FDF4"
+                    BorderColor="#16A34A"
+                    BorderThickness="2"
+                    Padding="4,16,24,8"
+                    CornerRadius="14">
+                    <Grid BackgroundColor="#BBF7D0">
+                        <Label HorizontalOptions="Center" VerticalOptions="Center" Text="4,16,24,8" TextColor="Black" />
+                    </Grid>
+                </controls:FastBorder>
+            </Grid>
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="BorderThickness"
+                TextColor="Black" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="12"
+                RowDefinitions="Auto,Auto"
+                RowSpacing="12">
+
+                <controls:FastBorder
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HeightRequest="72"
+                    BackgroundColor="#FFF7ED"
+                    BorderColor="#EA580C"
+                    BorderThickness="0"
+                    Padding="12"
+                    CornerRadius="14">
+                    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Stroke 0" TextColor="Black" />
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HeightRequest="72"
+                    BackgroundColor="#FFF7ED"
+                    BorderColor="#EA580C"
+                    BorderThickness="1"
+                    Padding="12"
+                    CornerRadius="14">
+                    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Stroke 1" TextColor="Black" />
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HeightRequest="72"
+                    BackgroundColor="#FFF7ED"
+                    BorderColor="#EA580C"
+                    BorderThickness="4"
+                    Padding="12"
+                    CornerRadius="14">
+                    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Stroke 4" TextColor="Black" />
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HeightRequest="72"
+                    BackgroundColor="#FFF7ED"
+                    BorderColor="#EA580C"
+                    BorderThickness="8"
+                    Padding="12"
+                    CornerRadius="14">
+                    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Stroke 8" TextColor="Black" />
+                </controls:FastBorder>
+            </Grid>
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="CornerRadius e clipping contenuto"
+                TextColor="Black" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="12"
+                RowDefinitions="Auto,Auto,Auto"
+                RowSpacing="12">
+
+                <controls:FastBorder
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HeightRequest="92"
+                    BackgroundColor="#111827"
+                    BorderColor="#111827"
+                    BorderThickness="2"
+                    Padding="0"
+                    CornerRadius="0">
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+                        <BoxView Grid.Row="0" Grid.Column="0" Color="#EF4444" />
+                        <BoxView Grid.Row="0" Grid.Column="1" Color="#FACC15" />
+                        <BoxView Grid.Row="1" Grid.Column="0" Color="#22C55E" />
+                        <BoxView Grid.Row="1" Grid.Column="1" Color="#3B82F6" />
+                        <Label Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" Text="Radius 0" TextColor="Black" />
+                    </Grid>
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HeightRequest="92"
+                    BackgroundColor="#111827"
+                    BorderColor="#111827"
+                    BorderThickness="2"
+                    Padding="0"
+                    CornerRadius="8">
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+                        <BoxView Grid.Row="0" Grid.Column="0" Color="#EF4444" />
+                        <BoxView Grid.Row="0" Grid.Column="1" Color="#FACC15" />
+                        <BoxView Grid.Row="1" Grid.Column="0" Color="#22C55E" />
+                        <BoxView Grid.Row="1" Grid.Column="1" Color="#3B82F6" />
+                        <Label Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" Text="Radius 8" TextColor="Black" />
+                    </Grid>
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HeightRequest="92"
+                    BackgroundColor="#111827"
+                    BorderColor="#111827"
+                    BorderThickness="2"
+                    Padding="0"
+                    CornerRadius="24">
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+                        <BoxView Grid.Row="0" Grid.Column="0" Color="#EF4444" />
+                        <BoxView Grid.Row="0" Grid.Column="1" Color="#FACC15" />
+                        <BoxView Grid.Row="1" Grid.Column="0" Color="#22C55E" />
+                        <BoxView Grid.Row="1" Grid.Column="1" Color="#3B82F6" />
+                        <Label Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" Text="Radius 24" TextColor="Black" />
+                    </Grid>
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HeightRequest="92"
+                    BackgroundColor="#111827"
+                    BorderColor="#111827"
+                    BorderThickness="2"
+                    Padding="0"
+                    CornerRadius="999">
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+                        <BoxView Grid.Row="0" Grid.Column="0" Color="#EF4444" />
+                        <BoxView Grid.Row="0" Grid.Column="1" Color="#FACC15" />
+                        <BoxView Grid.Row="1" Grid.Column="0" Color="#22C55E" />
+                        <BoxView Grid.Row="1" Grid.Column="1" Color="#3B82F6" />
+                        <Label Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" Text="Radius 999" TextColor="Black" />
+                    </Grid>
+                </controls:FastBorder>
+
+                <controls:FastBorder
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    HeightRequest="92"
+                    BackgroundColor="#111827"
+                    BorderColor="#111827"
+                    BorderThickness="2"
+                    Padding="0"
+                    CornerRadius="80,0,80,0">
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+                        <BoxView Grid.Row="0" Grid.Column="0" Color="#EF4444" />
+                        <BoxView Grid.Row="0" Grid.Column="1" Color="#FACC15" />
+                        <BoxView Grid.Row="1" Grid.Column="0" Color="#22C55E" />
+                        <BoxView Grid.Row="1" Grid.Column="1" Color="#3B82F6" />
+                        <Label Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" Text="Asymmetric 80,0,80,0" TextColor="Black" />
+                    </Grid>
+                </controls:FastBorder>
+            </Grid>
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Shadow in container"
+                TextColor="Black" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="12">
+
+                <Grid
+                    Grid.Column="0"
+                    HeightRequest="112"
+                    BackgroundColor="#E5E7EB">
+                    <controls:FastBorder
+                        Margin="8"
+                        BackgroundColor="#FFFFFF"
+                        BorderColor="#64748B"
+                        BorderThickness="1"
+                        Padding="12"
+                        CornerRadius="18"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill">
+                        <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Shadow off" TextColor="Black" />
+                    </controls:FastBorder>
+                </Grid>
+
+                <Grid
+                    Grid.Column="1"
+                    HeightRequest="112"
+                    BackgroundColor="#E5E7EB">
+                    <controls:FastBorder
+                        Margin="8"
+                        BackgroundColor="#FFFFFF"
+                        BorderColor="#64748B"
+                        BorderThickness="1"
+                        Padding="12"
+                        CornerRadius="18"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill">
+                        <controls:FastBorder.Shadow>
+                            <Shadow
+                                Brush="Black"
+                                Offset="12,12"
+                                Opacity="0.65"
+                                Radius="22" />
+                        </controls:FastBorder.Shadow>
+                        <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Shadow on" TextColor="Black" />
+                    </controls:FastBorder>
+                </Grid>
+            </Grid>
+
+            <controls:FastBorder
+                BackgroundColor="#F8FAFC"
+                BorderColor="#CBD5E1"
+                BorderThickness="1"
+                Padding="12"
+                CornerRadius="14">
+                <Label
+                    FontSize="12"
+                    Text="Overlay border: proprietà interna usata dagli scenari di stato visuale nel pacchetto completo."
+                    TextColor="#475569" />
+            </controls:FastBorder>
+
+            <!-- Spacer -->
+            <BoxView HeightRequest="30" Opacity="0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

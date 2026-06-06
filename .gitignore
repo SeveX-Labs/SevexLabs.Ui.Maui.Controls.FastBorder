@@ -1,0 +1,53 @@
+# Build output
+bin/
+obj/
+artifacts/
+publish/
+out/
+TestResults/
+
+# NuGet output/cache
+*.nupkg
+*.snupkg
+NuGetPackages/
+.local-nuget/
+.local-packages/
+packages/
+
+# IDE/editor
+.vs/
+.vscode/
+.idea/
+*.user
+*.csproj.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS files
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# .NET tooling
+*.binlog
+*.trx
+coverage/
+coverage-results/
+*.coverage
+*.coveragexml
+
+# MAUI / mobile intermediates
+**/Platforms/Android/bin/
+**/Platforms/Android/obj/
+**/Platforms/iOS/bin/
+**/Platforms/iOS/obj/
+*.apk
+*.aab
+*.ipa
+*.app
+*.xcarchive
+*.dSYM/
