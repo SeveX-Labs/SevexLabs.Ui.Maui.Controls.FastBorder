@@ -38,8 +38,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="README.md" Pack="true" PackagePath="\" />
-	  <None Include="docs\images\*.png" Pack="true" PackagePath="docs\images\" />
+	  <None Include="..\README.md" Pack="true" PackagePath="README.md" />
+	  <None Include="..\docs\images\*.png" Pack="true" PackagePath="docs/images/" />
 	</ItemGroup>
 
 </Project>
