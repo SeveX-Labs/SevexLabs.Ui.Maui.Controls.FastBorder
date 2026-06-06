@@ -49,30 +49,30 @@ Do not use MAUI `Border` properties such as `Stroke`, `StrokeThickness`, or
 
 ### Basic
 
-![FastBorder basic example](../docs/images/fastborder-basic.png)
+![FastBorder basic example](docs/images/fastborder-basic.png)
 
 Simple border with `BorderColor`, `BorderThickness`, `Padding`, and text content.
 
 ### Rounded
 
-![FastBorder rounded example](../docs/images/fastborder-rounded.png)
+![FastBorder rounded example](docs/images/fastborder-rounded.png)
 
 Rounded card-style border with a visible background and inner content.
 
 ### Shadow
 
-![FastBorder shadow example](../docs/images/fastborder-shadow.png)
+![FastBorder shadow example](docs/images/fastborder-shadow.png)
 
 FastBorder with visible shadow offset, radius, and opacity.
 
 ### Clipping
 
-![FastBorder clipping example](../docs/images/fastborder-clipping.png)
+![FastBorder clipping example](docs/images/fastborder-clipping.png)
 
 Colored content clipped by rounded corners.
 
 ### Profiling
 
-![Border vs FastBorder profiling view](../docs/images/fastborder-profiling.png)
+![Border vs FastBorder profiling view](docs/images/fastborder-profiling.png)
 
 SampleApp profiling view for practical, scenario-dependent measurements.
