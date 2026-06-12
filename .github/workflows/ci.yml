@@ -6,36 +6,81 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+
 jobs:
   build:
+    name: Build
     runs-on: macos-15
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           global-json-file: global.json
 
       - name: Install MAUI workloads
         run: dotnet workload install maui-android maui-ios --skip-manifest-update
 
-      - name: Restore
+      - name: Restore library
         run: dotnet restore SevexLabs.Ui.Maui.Controls.FastBorder/SevexLabs.Ui.Maui.Controls.FastBorder.csproj
 
-      - name: Build Android
-        run: dotnet build SevexLabs.Ui.Maui.Controls.FastBorder/SevexLabs.Ui.Maui.Controls.FastBorder.csproj -c Release -f net10.0-android --no-restore -p:ContinuousIntegrationBuild=true
+      - name: Build Android library
+        run: >
+          dotnet build SevexLabs.Ui.Maui.Controls.FastBorder/SevexLabs.Ui.Maui.Controls.FastBorder.csproj
+          -f net10.0-android
+          -c Release
+          --no-restore
+          -m:1
+          -v:n
+          -p:UseSharedCompilation=false
 
-      - name: Build iOS
-        run: dotnet build SevexLabs.Ui.Maui.Controls.FastBorder/SevexLabs.Ui.Maui.Controls.FastBorder.csproj -c Release -f net10.0-ios --no-restore -p:ContinuousIntegrationBuild=true
+      - name: Build iOS library
+        run: >
+          dotnet build SevexLabs.Ui.Maui.Controls.FastBorder/SevexLabs.Ui.Maui.Controls.FastBorder.csproj
+          -f net10.0-ios
+          -c Release
+          --no-restore
+          -m:1
+          -v:n
+          -p:UseSharedCompilation=false
 
       - name: Pack
-        run: dotnet pack SevexLabs.Ui.Maui.Controls.FastBorder/SevexLabs.Ui.Maui.Controls.FastBorder.csproj -c Release --no-restore -o artifacts -p:ContinuousIntegrationBuild=true
+        run: >
+          dotnet pack SevexLabs.Ui.Maui.Controls.FastBorder/SevexLabs.Ui.Maui.Controls.FastBorder.csproj
+          -c Release
+          -o artifacts
+          --no-build
+          -p:ContinuousIntegrationBuild=true
 
-      - name: Upload artifacts
+      - name: Upload package artifacts
         uses: actions/upload-artifact@v4
         with:
           name: nuget-packages
           path: artifacts/*
+
+      - name: Restore Android sample
+        run: >
+          dotnet restore SAMPLE/SevexLabsUiControlsFastBorder.SampleApp/SevexLabsUiControlsFastBorder.SampleApp.csproj
+          -p:UseAsProjectReference=true
+          -p:OverrideAndroidSpecificVersion=36.0
+          -p:MauiVersion=10.0.20
+          -p:RuntimeIdentifier=android-arm64
+
+      - name: Build Android sample
+        run: >
+          dotnet build SAMPLE/SevexLabsUiControlsFastBorder.SampleApp/SevexLabsUiControlsFastBorder.SampleApp.csproj
+          -f net10.0-android36.0
+          -c Release
+          --no-restore
+          -m:1
+          -v:n
+          -p:UseSharedCompilation=false
+          -p:UseAsProjectReference=true
+          -p:OverrideAndroidSpecificVersion=36.0
+          -p:MauiVersion=10.0.20
+          -p:RuntimeIdentifier=android-arm64
