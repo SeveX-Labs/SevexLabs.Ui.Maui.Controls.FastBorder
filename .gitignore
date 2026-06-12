@@ -5,6 +5,8 @@ artifacts/
 publish/
 out/
 TestResults/
+Directory.Build.local.props
+Directory.Build.local.props.disabled
 
 # NuGet output/cache
 *.nupkg
