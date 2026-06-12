@@ -26,7 +26,7 @@ jobs:
         run: dotnet restore SevexLabs.Ui.Maui.Controls.FastBorder/SevexLabs.Ui.Maui.Controls.FastBorder.csproj
 
       - name: Build Android
-        run: dotnet build SevexLabs.Ui.Maui.Controls.FastBorder/SevexLabs.Ui.Maui.Controls.FastBorder.csproj -c Release -f net10.0-android36.0 --no-restore -p:ContinuousIntegrationBuild=true
+        run: dotnet build SevexLabs.Ui.Maui.Controls.FastBorder/SevexLabs.Ui.Maui.Controls.FastBorder.csproj -c Release -f net10.0-android --no-restore -p:ContinuousIntegrationBuild=true
 
       - name: Build iOS
         run: dotnet build SevexLabs.Ui.Maui.Controls.FastBorder/SevexLabs.Ui.Maui.Controls.FastBorder.csproj -c Release -f net10.0-ios --no-restore -p:ContinuousIntegrationBuild=true
